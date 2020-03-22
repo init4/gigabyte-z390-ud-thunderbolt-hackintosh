@@ -29,7 +29,8 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
 
 ## Pre-requisites
 - Get macOS Mojave (10.14.6) (see notes) 
-- [Clover's Install Package](http://mackie100projects.altervista.org/download-clover-configurator/)
+- [Clover Install Package](https://sourceforge.net/projects/cloverefiboot/)
+- [Clover Configurator Install Package](http://mackie100projects.altervista.org/download-clover-configurator/)
 - The [EFI](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/tree/master/EFI) area from this repo
 
 ## Installation process 
@@ -43,8 +44,8 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
     - Mount USB EFI partition `sudo mkdir /Volumes/efiusb`
     - `sudo mount -t msdos /dev/disk{number} /Volumes/efidisk`
     - Remove existing Clover stuff `rm -rf /Volumes/efiusb/EFI/CLOVER/*`
-    - Copy my repo config on `cp -r ./gigabyte-z390-ud-thunderbolt-hackintosh /Volumes/efiusb/EFI/CLOVER/` 
-4. Edit the Clover config to include real serial numbers/uuid so iMessage/etc will work 
+    - Copy my repo config on `cp -r ./gigabyte-z390-ud-thunderbolt-hackintosh/EFI/* /Volumes/efiusb/EFI/` 
+4. Use Clover Configurator to edit config.plist, and generate real serial numbers/uuid so iMessage/etc will work 
 5. Update [BIOS](https://www.gigabyte.com/Motherboard/Z390-UD-rev-10/support#support-dl-bios), I used F9. 
 6. Configure BIOS 
     - Load Optimized Default Settings
