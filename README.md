@@ -67,8 +67,8 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
     - Power → DMI ASPM: Enabled 
     - Power → ErP: Enabled 
 7. Install macOS
-    - I ran into this issue LOL [Apple signing key expired](https://9to5mac.com/2019/10/24/macos-application-damaged/) 
-    - Fixed by setting the system date back to 2018 (or you can just download it again)  
+    - I ran into this :roll_eyes: [Apple signing key expired](https://9to5mac.com/2019/10/24/macos-application-damaged/) 
+    - Fixed by setting the system date back to 2018 for the install (or you can just download it again)  
 8. Create EFI partition for Hackintosh
     - locate SSD & USB's disk no. by `diskutil list`
     - Create EFI partition for Hackintosh `sudo mkdir /Volumes/efidisk`
@@ -78,21 +78,29 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
     - Copy clover settings from USB `cp -R /Volumes/efiusb/* /Volumes/efidisk`
 9. Enjoy, if this page helped get your Thunderbolt device going let me know 
 
+## What works
+Everything works as far as I can tell; GPU, Network, Audio, USB. It was pretty painless.
+
+## What doesn't work
+The USB hub attached to the Thunderbolt display will not wake from sleep. To wake it up again you must power cycle everything, including unplugging the screen for 30 seconds while the PC is off. For now I have just disabled sleep.
+
 ## Notes 
 If you are going to Hackintosh a Gigabyte Z390 UD, save yourself some time and upgrade the BIOS before you start, I wasted a couple of hours trying with F3 BIOS. Also, don't try to boot off the front USB ports, for some reason this would never work properly.
 
 Note that the Gigabyte F9 and onward BIOS wont let you disable the SuperIO serial port (menu option is gone). This didnt seem to matter, even though others recommend disabling it. 
 
-Everything works with one annoying exception; the USB hub attached to the Thunderbolt display will not wake from sleep. To wake it up again you must power cycle everything, including unplugging the screen for 30 seconds while the PC is off. For now I have just disabled sleep.
-
 Also note that I have deliberately used the Alpine Ridge Thunderbolt 3 controller, because of the issues described [here](https://github.com/intel/thunderbolt-software-user-space/issues/66) it is doubtful that a Titan Ridge controller will ever work properly with an Apple Thunderbolt display.  
 
 ## Performance
-Performance is better than a real iMac 5K, at less than a third of the build cost.
+Performance is very similar to a real iMac Retina or iMac Pro, and would keep up with many Xeon Macs. Certainly build cost is much cheaper than a real Mac. As an experiment I will see what I can do with overclocking. 
 
 ![CPU Score](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/geekbench-cpu-score.png?raw=true)
 
 ![GPU Score](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/geekbench-gpu-score.png?raw=true)
+
+## Todo 
+- Overclocking
+- Add some info on my software RAID setup
 
 ## References
 My build was helped out by reading experiences from these guys, and messing with their Clover configs.
