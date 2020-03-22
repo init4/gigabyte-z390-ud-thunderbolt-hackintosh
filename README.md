@@ -2,20 +2,22 @@
 
 ![Hackintosh info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/info.png?raw=true)
 
-## Part List
+## Parts List
 | Component     | Model         | 
 | ------------- |:-------------:| 
 | CPU | Intel® Core™ i9-9900K Processor | 
-| + | w/ Noctua NH-U12S cooler | 
+| | w/ Noctua NH-U12S cooler | 
 | Motherboard | Gigabyte Z390 UD |   
 | RAM | 4x Kingston, 16GB, DDR4, 2666MHz |
 | Video Card | MSI Radeon® Vega 64 Air Boost 8GB | 
+| | Displayport output passed back into TB3 Mini-Displayport input | 
 | Storage | Samsung SSD 970 EVO Plus 500GB M.2 Internal Solid State Drive |
-| + | 4x Western Digital 4TB SATA |
-| Wifi | None |
+| | 4x Western Digital 4TB SATA |
+| Wifi | None, I only need the wired network |
 | Bluetooth | BCM20702 Bluetooth 4.0 USB |
 | Add-in card | Gigabyte Alpine Ridge Dual Thunderbolt 3 |
 | Screen | Apple Thunderbolt Display 27-inch |
+| | Apple Thunderbolt 2 → 3 adapter |
 | Keyboard | Apple Magic Keyboard |
 | Mouse | Apple Magic Trackpad 2 |
 
@@ -25,27 +27,48 @@
 #### macOS Mojave 
 For this build I wanted to use Mojave, since I find the System Integrity Protection in Catalina to be annoying.
 
-## PreRequisites
+## Pre-requisites
 - [Clover's Install Package](http://mackie100projects.altervista.org/download-clover-configurator/)
 
-## Installation Walkthrough
+## Installation process 
 1. Get `macOS Mojave (10.14.6)`
-2. Building the USB Installer followed by [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer)
+2. Building the USB Installer followed by [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer) E.g: 
+    - Note that all guides seem to recommend a 16Gb USB drive, I used 8Gb with no problems 
+    - Create the installer `sudo "/Applications/Install macOS Mojave.app/Contents/Resources/createinstallmedia" --volume /Volumes/USB`
 3. Install `Clover EFI bootloader` to USB Installer followed by [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/clover-setup)
-4. Clone this repo and copy the Clover files onto your USB Installer
-   - xxx
-   - yyy 
+4. Clone this repo and copy the Clover files onto your USB Installer. E.g.:
+    - `git clone https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh.git` 
+    - Locate SSD & USB device `diskutil list`
+    - Mount USB EFI partition `sudo mkdir /Volumes/efiusb`
+    - `sudo mount -t msdos /dev/disk{number} /Volumes/efidisk`
+    - Remove existing Clover stuff `rm -rf /Volumes/efiusb/EFI/CLOVER/*`
+    - Copy my repo config on `cp -r ./gigabyte-z390-ud-thunderbolt-hackintosh /Volumes/efiusb/EFI/CLOVER/` 
 5. Edit the Clover config to include a real serial number so iMessage/etc will work 
-5. Update [bios](https://www.gigabyte.com/Motherboard/Z390-UD-rev-10/support#support-dl-bios), I used F9. The macOS installer kept crashing with F10 beta so I rolled back.
-6. Configure Bios  
+5. Update [BIOS](https://www.gigabyte.com/Motherboard/Z390-UD-rev-10/support#support-dl-bios), I used F9. 
+6. Configure BIOS 
     - Load Optimized Default Settings
-    - Peripherals → USB Configuration → XHCI Hand-off : Enabled
-    - Peripherals → Super IO Configuration → Serial Port: Disabled
-    - Chipset → DVMT Pre-Allocated: 96M
-    - Chipset → DVMT Total Gfx Mem: 256M
+    - BIOS → Windows 8/10 Features: Other OS  
+    - BIOS → CSM Support: Disabled 
+    - Chipset → VT-d: Disabled
+    - Chipset → Internal Graphics: Auto
+    - Chipset → Above 4G Decoding: Enabled
+    - Peripherals → Intel Platform Trust Technology (PTT): Disabled
+    - Peripherals → Legacy USB support: Enabled
+    - Peripherals → XHCI Hand-off: Enabled
+    - Peripherals → Port 60/64 emulation: Enabled
+    - Peripherals → Network stack: Disabled 
+    - Peripherals → Security device support: Disabled 
+    - Peripherals → Super IO configuration → Serial port: Enabled (see notes) 
+    - Peripherals → Thunderbolt → Security: Disabled (IMPORTANT! TB1/2 don't support security) 
+    - Peripherals → Thunderbolt → USB: Enabled 
+    - Power → Platform Power Management: Enabled 
+    - Power → PEG ASPM: Disabled 
+    - Power → PCH ASPM: Disabled 
+    - Power → DMI ASPM: Enabled 
+    - Power → ErP: Enabled 
 7. Install macOS
-    - I ran into this issue- 
-    - Fixed by setting the system date back to 2018  
+    - I ran into this issue LOL [Apple signing key expired](https://9to5mac.com/2019/10/24/macos-application-damaged/) 
+    - Fixed by setting the system date back to 2018 (or you can just download it again)  
 8. Create EFI partition for Hackintosh
     - locate SSD & USB's disk no. by `diskutil list`
     - Create EFI partition for Hackintosh `sudo mkdir /Volumes/efidisk`
@@ -74,7 +97,7 @@ Performance is better than a real iMac 5K, at less than a third of the build cos
 ## References
 My build was helped out by reading experiences from these guys, and messing with their Clover configs.
 
-- [Github user marmartintsang] (https://github.com/marmartintsang/gigabyte-z390-ud-hackintosh) 
-- [Github user 7gill] (https://github.com/7gill/Gigabyte-Z390-UD-Catalina-install)
+- [@marmartintsang] (https://github.com/marmartintsang/gigabyte-z390-ud-hackintosh) 
+- [@7gill] (https://github.com/7gill/Gigabyte-Z390-UD-Catalina-install)
 - [Coffee Lake Config](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/config.plist-per-hardware/coffee-lake)
  
