@@ -25,17 +25,17 @@
 
 ## Targeted OS
 #### macOS Mojave 
-For this build I wanted to use Mojave, since I find the System Integrity Protection in Catalina to be annoying.
+For this build I wanted to use Mojave, since I find the System Integrity Protection in Catalina to be annoying. 
 
 ## Pre-requisites
 - [Clover's Install Package](http://mackie100projects.altervista.org/download-clover-configurator/)
 
 ## Installation process 
-1. Get `macOS Mojave (10.14.6)` (see notes)
-2. Building the USB Installer followed by [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer) E.g: 
+1. Get macOS Mojave (10.14.6) (see notes)
+2. Build the USB Installer. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer) guide
     - Note that all guides seem to recommend a 16Gb USB drive, I used 8Gb with no problems 
     - Create the installer `sudo "/Applications/Install macOS Mojave.app/Contents/Resources/createinstallmedia" --volume /Volumes/USB`
-3. Install `Clover EFI bootloader` to USB Installer followed by [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/clover-setup)
+3. Install Clover to USB Installer. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/clover-setup) guide
 4. Clone this repo and copy the Clover files onto your USB Installer. E.g.:
     - `git clone https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh.git` 
     - Locate SSD & USB device `diskutil list`
@@ -67,8 +67,8 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
     - Power → DMI ASPM: Enabled 
     - Power → ErP: Enabled 
 7. Install macOS
-    - I already had a Mojave image and ran into this when I tried to install it :roll_eyes: [Apple signing key expired](https://9to5mac.com/2019/10/24/macos-application-damaged/) 
-    - Fixed by setting the system date back to 2018 for the install (or you can just download it again)  
+    - I already had a Mojave image and ran into a when I tried to install :roll_eyes: [Apple signing key expired](https://9to5mac.com/2019/10/24/macos-application-damaged/) 
+    - Fixed by setting the system date back to 2018 for the install (shouldn't happen for fresh downloads)  
 8. Create EFI partition for Hackintosh
     - locate SSD & USB's disk no. by `diskutil list`
     - Create EFI partition for Hackintosh `sudo mkdir /Volumes/efidisk`
@@ -82,14 +82,14 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
 Nearly everything works as far as I can tell; GPU, Network, Bluetooth, Audio, USB. It was pretty painless.
 
 ## What doesn't work
-The USB hub attached to the Thunderbolt display will not wake from sleep. To wake it up again you must power cycle everything, including unplugging the screen for 30 seconds while the PC is off. For now I have just disabled sleep.
+The USB hub built-in to the Thunderbolt display will not wake from sleep. To wake it up again you must power cycle everything, including unplugging the screen for 30 seconds while the PC is off. For now I have just disabled sleep.
 
 ## Notes 
 Get [macOS patcher](http://dosdude1.com/software.html) to make it easier to download the macOS install packages. Finding direct links to the packages is really difficult.
 
 If you are going to Hackintosh a Gigabyte Z390 UD, save yourself some time and upgrade the BIOS before you start, I wasted a couple of hours trying with F3 BIOS. Also, don't try to boot the installer from the front USB ports, this always failed in my experience. Note that the Gigabyte F9 and onward BIOS wont let you disable the SuperIO serial port (menu option is gone). This didnt seem to matter, even though others recommend disabling it. 
 
-My research would indicate that Thunderbolt 1 & 2 don't support security, and I couldn't make the Thunderbolt Display's in-built USB hub work while Thunderbolt security was enabled.
+My research would indicate that Thunderbolt 1 & 2 don't implement security, and I couldn't make the Thunderbolt Display's in-built USB hub work while Thunderbolt security was enabled.
 
 Also note that I have deliberately used the Alpine Ridge Thunderbolt 3 controller, because of the issues described [here](https://github.com/intel/thunderbolt-software-user-space/issues/66) it is doubtful that a Titan Ridge controller will ever work properly with an Apple Thunderbolt display.  
 
