@@ -28,22 +28,23 @@
 For this build I wanted to use Mojave, since I find the System Integrity Protection in Catalina to be annoying. 
 
 ## Pre-requisites
+- Get macOS Mojave (10.14.6) (see notes) 
 - [Clover's Install Package](http://mackie100projects.altervista.org/download-clover-configurator/)
+- The [EFI](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/tree/master/EFI) area from this repo
 
 ## Installation process 
-1. Get macOS Mojave (10.14.6) (see notes)
-2. Build the USB Installer. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer) guide
+1. Build the USB Installer disk. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer) guide
     - Note that all guides seem to recommend a 16Gb USB drive, I used 8Gb with no problems 
     - Create the installer `sudo "/Applications/Install macOS Mojave.app/Contents/Resources/createinstallmedia" --volume /Volumes/USB`
-3. Install Clover to USB Installer. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/clover-setup) guide
-4. Clone this repo and copy the Clover files onto your USB Installer. E.g.:
+2. Install Clover to USB Installer. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/clover-setup) guide
+3. Clone this repo and copy the Clover files onto your USB Installer. E.g.:
     - `git clone https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh.git` 
     - Locate SSD & USB device `diskutil list`
     - Mount USB EFI partition `sudo mkdir /Volumes/efiusb`
     - `sudo mount -t msdos /dev/disk{number} /Volumes/efidisk`
     - Remove existing Clover stuff `rm -rf /Volumes/efiusb/EFI/CLOVER/*`
     - Copy my repo config on `cp -r ./gigabyte-z390-ud-thunderbolt-hackintosh /Volumes/efiusb/EFI/CLOVER/` 
-5. Edit the Clover config to include real serial numbers/uuid so iMessage/etc will work 
+4. Edit the Clover config to include real serial numbers/uuid so iMessage/etc will work 
 5. Update [BIOS](https://www.gigabyte.com/Motherboard/Z390-UD-rev-10/support#support-dl-bios), I used F9. 
 6. Configure BIOS 
     - Load Optimized Default Settings
