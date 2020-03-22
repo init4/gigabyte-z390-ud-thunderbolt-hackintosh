@@ -97,7 +97,7 @@ Performance is better than a real iMac 5K, at less than a third of the build cos
 ## References
 My build was helped out by reading experiences from these guys, and messing with their Clover configs.
 
-- [@marmartintsang] (https://github.com/marmartintsang/gigabyte-z390-ud-hackintosh) 
-- [@7gill] (https://github.com/7gill/Gigabyte-Z390-UD-Catalina-install)
+- [@marmartintsang](https://github.com/marmartintsang/gigabyte-z390-ud-hackintosh) 
+- [@7gill](https://github.com/7gill/Gigabyte-Z390-UD-Catalina-install)
 - [Coffee Lake Config](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/config.plist-per-hardware/coffee-lake)
  
