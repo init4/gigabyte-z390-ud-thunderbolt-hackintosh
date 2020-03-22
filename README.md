@@ -69,8 +69,8 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
     - Power → DMI ASPM: Enabled 
     - Power → ErP: Enabled 
 7. Install macOS
-    - I already had a Mojave image and ran into a when I tried to install :roll_eyes: [Apple signing key expired](https://9to5mac.com/2019/10/24/macos-application-damaged/) 
-    - Fixed by setting the system date back to 2018 for the install (shouldn't happen for fresh downloads)  
+    - I already had a Mojave image and ran into [this](https://9to5mac.com/2019/10/24/macos-application-damaged/) when I tried to install :roll_eyes: 
+    - Fixed by setting the system date back to 2018 for the install (wont happen for a fresh download)  
 8. Create EFI partition for Hackintosh
     - locate SSD & USB's disk no. by `diskutil list`
     - Create EFI partition for Hackintosh `sudo mkdir /Volumes/efidisk`
@@ -78,7 +78,7 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
     - Mount USB's EFI partition `sudo mkdir /Volumes/efiusb`
     - `sudo mount -t msdos /dev/disk{number} /Volumes/efiusb`
     - Copy clover settings from USB `cp -R /Volumes/efiusb/* /Volumes/efidisk`
-9. Enjoy, if this page helped get your Thunderbolt device going let me know 
+9. Enjoy, if you find any errors or this page helped get your Thunderbolt device going let me know 
 
 ## What works
 Nearly everything works as far as I can tell; GPU, Network, Bluetooth, Audio, USB. It was pretty painless.
@@ -87,7 +87,7 @@ Nearly everything works as far as I can tell; GPU, Network, Bluetooth, Audio, US
 The USB hub built-in to the Thunderbolt display will not wake from sleep. To wake it up again you must power cycle everything, including unplugging the screen for 30 seconds while the PC is off. For now I have just disabled sleep.
 
 ## Notes 
-Get [macOS patcher](http://dosdude1.com/software.html) to make it easier to download the macOS install packages. Finding direct links to the packages is really difficult.
+Get [macOS patcher](http://dosdude1.com/software.html) to make it easier to download the macOS install packages. Finding direct links to the packages is difficult.
 
 If you are going to Hackintosh a Gigabyte Z390 UD, save yourself some time and upgrade the BIOS before you start, I wasted a couple of hours trying with F3 BIOS. Also, don't try to boot the installer from the front USB ports, this always failed in my experience. Note that the Gigabyte F9 and onward BIOS wont let you disable the SuperIO serial port (menu option is gone). This didnt seem to matter, even though others recommend disabling it. 
 
