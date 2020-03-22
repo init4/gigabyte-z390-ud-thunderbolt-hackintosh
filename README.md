@@ -31,7 +31,7 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
 - [Clover's Install Package](http://mackie100projects.altervista.org/download-clover-configurator/)
 
 ## Installation process 
-1. Get `macOS Mojave (10.14.6)`
+1. Get `macOS Mojave (10.14.6)` (see notes)
 2. Building the USB Installer followed by [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer) E.g: 
     - Note that all guides seem to recommend a 16Gb USB drive, I used 8Gb with no problems 
     - Create the installer `sudo "/Applications/Install macOS Mojave.app/Contents/Resources/createinstallmedia" --volume /Volumes/USB`
@@ -59,7 +59,7 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
     - Peripherals → Network stack: Disabled 
     - Peripherals → Security device support: Disabled 
     - Peripherals → Super IO configuration → Serial port: Enabled (see notes) 
-    - Peripherals → Thunderbolt → Security: Disabled (IMPORTANT! TB1/2 don't support security) 
+    - Peripherals → Thunderbolt → Security: Disabled (IMPORTANT - see notes) 
     - Peripherals → Thunderbolt → USB: Enabled 
     - Power → Platform Power Management: Enabled 
     - Power → PEG ASPM: Disabled 
@@ -67,7 +67,7 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
     - Power → DMI ASPM: Enabled 
     - Power → ErP: Enabled 
 7. Install macOS
-    - I ran into this :roll_eyes: [Apple signing key expired](https://9to5mac.com/2019/10/24/macos-application-damaged/) 
+    - I already had a Mojave image and ran into this when I tried to install it :roll_eyes: [Apple signing key expired](https://9to5mac.com/2019/10/24/macos-application-damaged/) 
     - Fixed by setting the system date back to 2018 for the install (or you can just download it again)  
 8. Create EFI partition for Hackintosh
     - locate SSD & USB's disk no. by `diskutil list`
@@ -79,20 +79,24 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
 9. Enjoy, if this page helped get your Thunderbolt device going let me know 
 
 ## What works
-Everything works as far as I can tell; GPU, Network, Audio, USB. It was pretty painless.
+Nearly everything works as far as I can tell; GPU, Network, Bluetooth, Audio, USB. It was pretty painless.
 
 ## What doesn't work
 The USB hub attached to the Thunderbolt display will not wake from sleep. To wake it up again you must power cycle everything, including unplugging the screen for 30 seconds while the PC is off. For now I have just disabled sleep.
 
 ## Notes 
-If you are going to Hackintosh a Gigabyte Z390 UD, save yourself some time and upgrade the BIOS before you start, I wasted a couple of hours trying with F3 BIOS. Also, don't try to boot off the front USB ports, for some reason this would never work properly.
+Get [macOS patcher](http://dosdude1.com/software.html) to make it easier to download the macOS install packages. Finding direct links to the packages is really difficult.
 
-Note that the Gigabyte F9 and onward BIOS wont let you disable the SuperIO serial port (menu option is gone). This didnt seem to matter, even though others recommend disabling it. 
+If you are going to Hackintosh a Gigabyte Z390 UD, save yourself some time and upgrade the BIOS before you start, I wasted a couple of hours trying with F3 BIOS. Also, don't try to boot the installer from the front USB ports, this always failed in my experience. Note that the Gigabyte F9 and onward BIOS wont let you disable the SuperIO serial port (menu option is gone). This didnt seem to matter, even though others recommend disabling it. 
+
+My research would indicate that Thunderbolt 1 & 2 don't support security, and I couldn't make the Thunderbolt Display's in-built USB hub work while Thunderbolt security was enabled.
 
 Also note that I have deliberately used the Alpine Ridge Thunderbolt 3 controller, because of the issues described [here](https://github.com/intel/thunderbolt-software-user-space/issues/66) it is doubtful that a Titan Ridge controller will ever work properly with an Apple Thunderbolt display.  
 
+Once you have everything installed and set up properly, you can edit the Clover config.plist to remove verbose boot. This speeds up booting.
+
 ## Performance
-Performance is very similar to a real iMac Retina or iMac Pro, and would keep up with many Xeon Macs. Certainly build cost is much cheaper than a real Mac. As an experiment I will see what I can do with overclocking. 
+Performance is similar to a real iMac Retina or iMac Pro, and would keep up with many Xeon Macs. Certainly build cost is far chehper than a real Mac. As an experiment I will see what I can do with overclocking. 
 
 ![CPU Score](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/geekbench-cpu-score.png?raw=true)
 
