@@ -43,7 +43,7 @@ For this build I wanted to use Mojave, since I find the System Integrity Protect
     - `sudo mount -t msdos /dev/disk{number} /Volumes/efidisk`
     - Remove existing Clover stuff `rm -rf /Volumes/efiusb/EFI/CLOVER/*`
     - Copy my repo config on `cp -r ./gigabyte-z390-ud-thunderbolt-hackintosh /Volumes/efiusb/EFI/CLOVER/` 
-5. Edit the Clover config to include a real serial number so iMessage/etc will work 
+5. Edit the Clover config to include real serial numbers/uuid so iMessage/etc will work 
 5. Update [BIOS](https://www.gigabyte.com/Motherboard/Z390-UD-rev-10/support#support-dl-bios), I used F9. 
 6. Configure BIOS 
     - Load Optimized Default Settings
