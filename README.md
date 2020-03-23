@@ -1,6 +1,6 @@
 # Gigabyte Z390-UD Vanilla Hackintosh Installation with fully working 27 inch Thunderbolt Display 
 
-![Hackintosh info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/info.png?raw=true)[Display info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/display.png?raw=true)
+![Hackintosh info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/info.png?raw=true)![Display info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/display.png?raw=true)
 
 ## Parts List
 | Component     | Model         | 
