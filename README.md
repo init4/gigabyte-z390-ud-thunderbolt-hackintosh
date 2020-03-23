@@ -98,7 +98,7 @@ Also note that I have deliberately used the Alpine Ridge Thunderbolt 3 controlle
 Once you have everything installed and set up properly, you can edit the Clover config.plist to remove verbose boot. This speeds up booting.
 
 ## Performance
-Performance is similar to a real iMac Retina or iMac Pro, and would keep up with many Xeon Macs. Certainly build cost is far chehper than a real Mac. As an experiment I will see what I can do with overclocking. 
+Performance is similar to a real iMac Retina or iMac Pro, and would keep up with many Xeon Macs. Certainly build cost is far cheaper than a real Mac. As an experiment I will see what I can do with overclocking. 
 
 ![CPU Score](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/geekbench-cpu-score.png?raw=true)
 
