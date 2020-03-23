@@ -1,6 +1,6 @@
 # Gigabyte Z390-UD Vanilla Hackintosh Installation with fully working 27 inch Thunderbolt Display 
 
-![Hackintosh info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/info.png?raw=true)
+![Hackintosh info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/info.png?raw=true)[Display info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/display.png?raw=true)
 
 ## Parts List
 | Component     | Model         | 
@@ -25,7 +25,7 @@
 
 ## Targeted OS
 #### macOS Mojave 
-For this build I wanted to use Mojave, since I find the System Integrity Protection in Catalina to be annoying. 
+For this build I wanted to use Mojave, since I find Mojave to be a little faster and System Integrity Protection in Catalina is annoying. 
 
 ## Pre-requisites
 - Get macOS Mojave (10.14.6) (see notes) 
