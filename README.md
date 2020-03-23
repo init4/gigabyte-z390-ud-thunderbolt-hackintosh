@@ -81,7 +81,7 @@ For this build I wanted to use Mojave, since I find it to be a little faster and
 9. Enjoy, if you find any errors or this page helped get your Thunderbolt device going let me know 
 
 ## What works
-Nearly everything works as far as I can tell; GPU, Network, Bluetooth, Audio, USB. It was pretty painless.
+Nearly everything works as far as I can tell; GPU, Network, Bluetooth, Audio, USB. iMessage works, GPU supports Metal, Homekit works. It was pretty painless.
 
 ## What doesn't work
 The USB hub built-in to the Thunderbolt display will not wake from sleep. To wake it up again you must power cycle everything, including unplugging the screen for 30 seconds while the PC is off. For now I have just disabled sleep.
