@@ -25,7 +25,7 @@
 
 ## Targeted OS
 #### macOS Mojave 
-For this build I wanted to use Mojave, since I find Mojave to be a little faster and System Integrity Protection in Catalina is annoying. 
+For this build I wanted to use Mojave, since I find it to be a little faster and System Integrity Protection in Catalina is annoying. 
 
 ## Pre-requisites
 - Get macOS Mojave (10.14.6) (see notes) 
@@ -35,7 +35,7 @@ For this build I wanted to use Mojave, since I find Mojave to be a little faster
 
 ## Installation process 
 1. Build the USB Installer disk. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer) guide
-    - Note that all guides seem to recommend a 16Gb USB drive, I used 8Gb with no problems 
+    - Note that all guides seem to recommend a 16Gb USB drive (some even 32Gb), I used 8Gb with no problems. FYI the Mojave install image is 5.7Gb on the USB drive. A USB3 flash disk will speed things up 
     - Create the installer `sudo "/Applications/Install macOS Mojave.app/Contents/Resources/createinstallmedia" --volume /Volumes/USB`
 2. Install Clover to USB Installer. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/clover-setup) guide
 3. Clone this repo and copy the Clover files onto your USB Installer. E.g.:
@@ -87,7 +87,7 @@ Nearly everything works as far as I can tell; GPU, Network, Bluetooth, Audio, US
 The USB hub built-in to the Thunderbolt display will not wake from sleep. To wake it up again you must power cycle everything, including unplugging the screen for 30 seconds while the PC is off. For now I have just disabled sleep.
 
 ## Notes 
-Get [macOS patcher](http://dosdude1.com/software.html) to make it easier to download the macOS install packages. Finding direct links to the packages is difficult.
+Get [macOS patcher](http://dosdude1.com/software.html) to make it easier to download the macOS install packages. Finding direct links to the full installer isn't easy.
 
 If you are going to Hackintosh a Gigabyte Z390 UD, save yourself some time and upgrade the BIOS before you start, I wasted a couple of hours trying with F3 BIOS. Also, don't try to boot the installer from the front USB ports, this always failed in my experience. Note that the Gigabyte F9 and onward BIOS wont let you disable the SuperIO serial port (menu option is gone). This didnt seem to matter, even though others recommend disabling it. 
 
