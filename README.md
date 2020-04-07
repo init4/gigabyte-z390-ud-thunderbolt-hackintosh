@@ -19,6 +19,7 @@
 | Screen | Apple Thunderbolt Display 27-inch |
 | | Apple Thunderbolt 2 → 3 adapter |
 | Keyboard | Apple Magic Keyboard |
+| | or (mood dependant) [Keychron K2](https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard) |
 | Mouse | Apple Magic Trackpad 2 |
 
 ![Part List](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/hardware.jpg?raw=true)
@@ -35,7 +36,7 @@ For this build I wanted to use Mojave, since I find it to be a little faster and
 
 ## Installation process 
 1. Build the USB Installer disk. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer) guide
-    - Note that all guides seem to recommend a 16Gb USB drive (some even 32Gb), I used 8Gb with no problems. FYI the Mojave install image is 5.7Gb on the USB drive. A USB3 flash disk will speed things up 
+    - Note that all guides seem to recommend a 16Gb USB drive (some even 32Gb!), I used 8Gb with no problems. FYI the Mojave install image is 5.7Gb on the USB drive. A USB3 drive will speed things up enormously 
     - Create the installer `sudo "/Applications/Install macOS Mojave.app/Contents/Resources/createinstallmedia" --volume /Volumes/USB`
 2. Install Clover to USB Installer. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/clover-setup) guide
 3. Clone this repo and copy the Clover files onto your USB Installer. E.g.:
