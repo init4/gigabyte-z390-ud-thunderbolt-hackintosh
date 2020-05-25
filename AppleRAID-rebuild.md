@@ -24,11 +24,11 @@ Device Node:          disk8
 ===============================================================================
 starscream[/scratch/tmp/current] 
 ```
-Notice the failed disk in the RAID_set_2 volume. Pay attention to the logical disk number (disk3) and its UUID.
+Notice the failed disk in the RAID_set_2 volume (which is virtual disk disk8). Pay attention to the physical disk number (disk3) and its UUID.
 
 ## Remove the failed drive from the volume
 
-Now we detach the failed disk from the RAID_set_2 volume. Triple check that you are really removing the right disk..
+Now we detach the failed disk (disk3) from the RAID_set_2 volume (disk8). Triple check that you are really removing the right disk..
 ```
 starscream[/scratch/tmp/current] diskutil appleraid remove 06173980-BF98-422F-AC36-818D54349EDD disk8
 Started RAID operation on disk8
@@ -58,7 +58,9 @@ Device Node:          disk8
 
 ## (Re)Initialise the replacement drive
 
-This particular drive still seems to respond to commands and isn't making any weird noises, so I think its still working. So I'm just going to re-initialise it and put it back into the volume.
+This particular drive still seems to respond to commands and isn't making any weird noises, so I think its still operational. If you run 'diskutil info disk3' you can verify the SMART status.
+
+So, I'm just going to re-initialise it and put it back into the volume.
 ```
 starscream[/scratch/tmp/current] diskutil eraseDisk HFS+ BLANK /dev/disk3
 Started erase on disk3
@@ -87,7 +89,7 @@ Adding disk3s2 to the RAID Set
 Finished RAID operation on disk8
 starscream[/scratch/tmp/current] 
 ```
-Now you can check that the volume is being synchronised with the checkraid command-
+You can check that the volume is being synchronised with the checkraid command-
 ```
 starscream[/scratch/tmp/current] diskutil checkraid
 AppleRAID sets (2 found)
@@ -108,5 +110,5 @@ Device Node:          disk8
 starscream[/scratch/tmp/current] 
 ```
 
-MacOS RAID is a nice little underappreciated feature. While its not as good as a full-blown zfs, it's been really solid for me. Hopefully this info has been useful for you! 🍺🍺
+AppleRAID is a nice little underappreciated feature. While its not as good as a full-blown zfs, it's been really solid for me in more than a decade of use. Hopefully this info has been useful for you! 🍺🍺
 
