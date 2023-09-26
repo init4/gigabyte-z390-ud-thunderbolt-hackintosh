@@ -1,6 +1,6 @@
 # Gigabyte Z390-UD Vanilla Hackintosh Installation with fully working 27 inch Thunderbolt Display 
 
-![Hackintosh info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/info.png?raw=true)![Display info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/display.png?raw=true)
+![Hackintosh info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/info.png?raw=true)![Display info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/display.png?raw=true)
 
 ## Parts List
 | Component     | Model         | 
@@ -22,7 +22,7 @@
 | | or (mood dependant) [Keychron K2](https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard) |
 | Mouse | Apple Magic Trackpad 2 |
 
-![Part List](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/hardware.jpg?raw=true)
+![Part List](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/hardware.jpg?raw=true)
 
 ## Targeted OS
 #### macOS Mojave 
@@ -32,7 +32,7 @@ For this build I wanted to use Mojave, since I find it to be a little faster and
 - Get macOS Mojave (10.14.6) (see notes) 
 - [Clover Install Package](https://sourceforge.net/projects/cloverefiboot/)
 - [Clover Configurator Install Package](http://mackie100projects.altervista.org/download-clover-configurator/)
-- The [EFI](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/tree/master/EFI) area from this repo
+- The [EFI](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/tree/catalina/EFI) area from this repo
 
 ## Installation process 
 1. Build the USB Installer disk. Read the [Vanilla](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer) guide
@@ -101,9 +101,9 @@ Once you have everything installed and set up properly, you can edit the Clover 
 ## Performance
 Performance is similar to a real iMac Retina or iMac Pro, and would keep up with many Xeon Macs. Certainly build cost is far cheaper than a real Mac. As an experiment I will see what I can do with overclocking. 
 
-![CPU Score](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/geekbench-cpu-score.png?raw=true)
+![CPU Score](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/geekbench-cpu-score.png?raw=true)
 
-![GPU Score](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/master/img/geekbench-gpu-score.png?raw=true)
+![GPU Score](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/geekbench-gpu-score.png?raw=true)
 
 ## Todo 
 - Overclocking
