@@ -1,4 +1,4 @@
-# Gigabyte Z390-UD Vanilla Hackintosh Installation with fully working 27 inch Thunderbolt Display 
+# Gigabyte Z390-UD Vanilla Hackintosh Installation 
 
 ![Hackintosh info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/info.png?raw=true)![Display info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/display.png?raw=true)
 
@@ -25,8 +25,8 @@
 ![Part List](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/hardware.jpg?raw=true)
 
 ## Targeted OS
-#### macOS Mojave 
-For this build I wanted to use Mojave, since I find it to be a little faster and System Integrity Protection in Catalina is annoying. 
+#### macOS Monterey 
+This build was originally using Mojave, which I subsequently upgraded to Catalina. For more information on that configuration, please see the [catalina](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/tree/catalina/) branch. There were a few changes required to run Monterey.
 
 ## Pre-requisites
 - Get macOS Mojave (10.14.6) (see notes) 
