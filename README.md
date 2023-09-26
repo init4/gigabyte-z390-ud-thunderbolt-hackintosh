@@ -24,7 +24,7 @@
 
 ## Targeted OS
 #### macOS Monterey 
-This build was originally using Mojave, which I subsequently upgraded to Catalina. For more information on that configuration, please see the [catalina](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/tree/catalina/) branch. There were a few changes required to run Monterey.
+This build was originally using Mojave, which I subsequently upgraded to Catalina. For more information on that configuration, please see the [catalina](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/tree/catalina/) branch. I switched my booter to Opencore after Catalina.
 
 ## Pre-requisites
 - Get macOS Monterey
