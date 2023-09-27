@@ -1,4 +1,5 @@
 # Gigabyte Z390-UD Vanilla Hackintosh Installation 
+Update 210923: My GA-Z390-UD mainboard eventually died (RIP), so I wont be updating this repo any further. Aside from the normal challenges with Thunderbolt, the machine worked perfectly for 5+ years of 24x7 running.
 
 ![Hackintosh info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/info.png?raw=true)![Display info](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/blob/catalina/img/display.png?raw=true)
 
@@ -74,8 +75,6 @@ This build was originally using Mojave, which I subsequently upgraded to Catalin
 9. Reboot
 
 ## Notes 
-My GA-Z390-UD mainboard eventually died (RIP), so I wont be updating this repo any further. Aside from the normal challenges with Thunderbolt, the machine worked perfectly for 5+ years of 24x7 running.
-
 Get [macOS patcher](http://dosdude1.com/software.html) to make it easier to download the macOS install packages. Finding direct links to the full installer isn't easy.
 
 If you are going to Hackintosh a Gigabyte Z390 UD, save yourself some time and upgrade the BIOS to version F10 before you start.
