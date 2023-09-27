@@ -1,7 +1,7 @@
 # Gigabyte Z390-UD Vanilla Hackintosh Installation 
 Update 210923: My GA-Z390-UD mainboard eventually died (RIP), so I am archiving this project.
 
-I had a few iterations with the GA-Z390-UD, for a long time it was running Mojave/Catalina with Clover. That configuration is [here](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/tree/monterey/).
+I had a few iterations with the GA-Z390-UD, for a long time it was running Mojave/Catalina with Clover. That configuration is [here](https://github.com/init4/gigabyte-z390-ud-thunderbolt-hackintosh/tree/catalina).
 
 More recently, it was running Monterey and Opencore, which is the 'monterey' branch.
 
